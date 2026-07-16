@@ -566,8 +566,6 @@ SEED_MOVIES = [
         \"backdrop_url\": \"https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1600&auto=format&fit=crop\",
     },
 ]
-
-
 @app.on_event(\"startup\")
 async def startup():
     # Indexes
@@ -601,3 +599,31 @@ async def startup():
     if count == 0:
         for i, m in enumerate(SEED_MOVIES):
             doc = {
+             **m,
+                \"id\": str(uuid.uuid4()),
+                \"slug\": slugify(m[\"title\"]) + f\"-{i+1:03d}\",
+                \"views\": (i + 1) * 137,
+                \"created_at\": now_iso(),
+                \"original_title\": m.get(\"original_title\", \"\"),
+                \"trailer_url\": m.get(\"trailer_url\", \"\"),
+                \"sources\": [
+                    {\"label\": \"Servidor 1\", \"url\": \"https://www.youtube.com/embed/aqz-KE-bpKQ\"},
+                    {\"label\": \"Servidor 2\", \"url\": \"https://www.youtube.com/embed/dQw4w9WgXcQ\"},
+                ],
+                \"featured\": m.get(\"featured\", False),
+                \"trending\": m.get(\"trending\", False),
+            }
+            try:
+                await db.movies.insert_one(doc)
+            except Exception:
+                pass
+        logger.info(f\"Seeded {len(SEED_MOVIES)} movies\")
+
+    # Initialize storage lazily
+    init_storage()
+
+
+@app.on_event(\"shutdown\")
+async def shutdown():
+    client.close()
+"

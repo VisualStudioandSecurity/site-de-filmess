@@ -1,0 +1,6 @@
+"/* MovieHub app-level utility styles */
+.App { min-height: 100vh; background: #050505; }
+
+.gradient-red { background: linear-gradient(135deg, #E50914 0%, #B80710 100%); }
+.text-gold { color: #FFB800; }
+"

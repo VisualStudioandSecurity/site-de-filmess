@@ -1,0 +1,136 @@
+{
+  "project_name": "MovieHub",
+  "language": "pt-BR",
+  "theme_strategy": {
+    "mode": "dark-only",
+    "archetype": "Luxury Cinematic (ARCHETYPE 5)",
+    "vibe": "Immersive, premium, distraction-free. Reminiscent of a modern movie theater with lights dimmed. High contrast for readability."
+  },
+  "colors": {
+    "background_base": "#050505",
+    "background_surface": "#111111",
+    "background_elevated": "#1A1A1A",
+    "primary_accent": "#E50914",
+    "primary_hover": "#B80710",
+    "secondary_accent": "#FFB800",
+    "text_main": "#FFFFFF",
+    "text_muted": "#A3A3A3",
+    "border_subtle": "#262626",
+    "glass_bg": "rgba(5, 5, 5, 0.7)"
+  },
+  "typography": {
+    "strategy": "The 'Editorial Future' pairing. Wide Display Sans for impactful movie titles, Geometric Body for clean synopsis and metadata.",
+    "fonts": {
+      "headings": "Outfit",
+      "body": "Manrope"
+    },
+    "scales": {
+      "hero_title": "text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter uppercase",
+      "section_title": "text-2xl sm:text-3xl font-bold tracking-tight",
+      "card_title": "text-lg font-semibold tracking-tight leading-tight",
+      "body_text": "text-base text-neutral-400 leading-relaxed",
+      "meta_labels": "text-xs font-bold uppercase tracking-[0.2em] text-neutral-500"
+    }
+  },
+  "layouts": {
+    "spacing_system": "Generous spacing. Use py-16 to py-24 for main sections. gap-6 to gap-8 for grids.",
+    "poster_grid": "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6",
+    "bento_admin": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4"
+  },
+  "components": {
+    "movie_poster_card": {
+      "aspect_ratio": "aspect-[2/3]",
+      "styling": "rounded-lg overflow-hidden relative group cursor-pointer bg-neutral-900",
+      "interaction": "transform transition-transform duration-300 hover:scale-105 hover:z-10 hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)]",
+      "overlay": "absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4",
+      "details_on_hover": "Show rating (gold star icon + number), year, and a 2-line truncated synopsis."
+    },
+    "hero_banner": {
+      "styling": "relative w-full h-[70vh] md:h-[85vh] flex items-end pb-24",
+      "overlay": "absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent",
+      "content_layout": "max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col items-start gap-4"
+    },
+    "header_nav": {
+      "styling": "fixed top-0 left-0 w-full z-50 backdrop-blur-2xl bg-[#050505]/70 border-b border-white/5 transition-colors duration-300",
+      "padding": "px-6 py-4"
+    },
+    "ad_slots": {
+      "concept": "Integrated smoothly without breaking the UX.",
+      "styling": "w-full bg-[#111111] border border-[#262626] rounded flex flex-col items-center justify-center relative overflow-hidden",
+      "label": "text-[10px] uppercase tracking-widest text-neutral-600 absolute top-2 right-2",
+      "variants": {
+        "leaderboard": "h-[90px] max-w-[728px] mx-auto my-8",
+        "rectangle": "h-[250px] w-[300px] mx-auto my-6"
+      }
+    },
+    "player_container": {
+      "styling": "w-full aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10 relative flex items-center justify-center",
+      "empty_state": "Display a cinematic poster background with a large, glowing red play button in the center."
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "Use backdrop-blur-xl bg-black/60 for sticky headers and modal overlays. MUST include border-white/5 for edge definition.",
+    "shadows": "Ambient diffuse shadows: shadow-[0_8px_32px_rgba(0,0,0,0.5)]. Glow for primary buttons: shadow-[0_0_15px_rgba(229,9,20,0.4)]."
+  },
+  "motion": {
+    "transitions": "NEVER use 'transition: all'. Use 'transition-all duration-300 ease-out' for colors, or 'transition-transform duration-300 cubic-bezier(0.4, 0, 0.2, 1)' for scaling.",
+    "page_load": "Staggered fade-up for poster grids. Scale-in for the hero banner."
+  },
+  "icons": {
+    "library": "lucide-react",
+    "usage": "Use Star (gold) for ratings, Play (white/red) for playback, Search, User, Clock, Calendar."
+  },
+  "image_urls": {
+    "hero_backgrounds": [
+      {
+        "url": "https://images.unsplash.com/photo-1597839219216-a773cb2473e4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwxfHxjaW5lbWF0aWMlMjB3aWRlJTIwc2hvdCUyMGRhcmt8ZW58MHx8fHwxNzg0MjQxNzg3fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Dark thriller wide shot for featured hero movie."
+      }
+    ],
+    "posters": [
+      {
+        "url": "https://images.unsplash.com/photo-1769397830996-c0e1a18c0a87?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwyfHxhY3Rpb24lMjBtb3ZpZSUyMHBvc3RlciUyMGRhcmt8ZW58MHx8fHwxNzg0MjQxNzg3fDA&ixlib=rb-4.1.0&q=85",
+        "category": "Action/Thriller"
+      },
+      {
+        "url": "https://images.pexels.com/photos/12838778/pexels-photo-12838778.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "category": "Drama/Romance"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1670174358985-5950e20f3b1e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwzfHxzY2ktZmklMjBtb3ZpZSUyMHBvc3RlciUyMG5lb258ZW58MHx8fHwxNzg0MjQxNzg3fDA&ixlib=rb-4.1.0&q=85",
+        "category": "Sci-Fi"
+      }
+    ],
+    "user_avatars": [
+      {
+        "url": "https://images.unsplash.com/photo-1740252117027-4275d3f84385?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHwzfHx1c2VyJTIwYXZhdGFyJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzg0MjQxNzg3fDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1740252117013-4fb21771e7ca?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHw0fHx1c2VyJTIwYXZhdGFyJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzg0MjQxNzg3fDA&ixlib=rb-4.1.0&q=85"
+      }
+    ]
+  },
+  "accessibility": {
+    "contrast": "Ensure text over images has sufficient contrast by using dark gradient overlays or text-shadows.",
+    "testing": "All interactive and key informational elements MUST include a 'data-testid' attribute (e.g., data-testid='movie-card-play')."
+  },
+  "instructions_to_main_agent": [
+    "Build the application using pure React and Tailwind CSS. Use Shadcn components for complex interactions (dropdowns, dialogs) but style them to fit the dark cinematic theme.",
+    "Always default to Dark Mode. Do not implement a light mode toggle; this is a cinematic experience.",
+    "Implement the ad slots as clear placeholder components. They should be visible to demonstrate the monetization capability, with a subtle label 'Publicidade' or 'Anúncio'.",
+    "For the admin panel, use a high-density 'Bento' grid layout. It should look like a functional, data-heavy dashboard with clear metrics (Views, Revenue, Users).",
+    "Ensure the hero image overlay is not too dark. Max bg-black/60 to keep the image visible.",
+    "Do NOT use pure #000000. Use #050505 for the darkest background.",
+    "Language must be Portuguese (pt-BR)."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic outputs. Avoid 'AI slop'.",
+    "Create depth with z-index hierarchy and glassmorphism (backdrop-blur-xl bg-black/60).",
+    "NEVER use generic 'transition: all'. Use specific properties.",
+    "NEVER center align text on paragraphs. Keep dense text left-aligned.",
+    "NEVER use AI assistant Emoji characters for icons. Use lucide-react.",
+    "Implement data-testid on ALL interactive elements.",
+    "Spacing must be generous. Use Tailwind p-6, p-8, gap-6, gap-8.",
+    "Do NOT use transparent backgrounds for dropdowns or modals over images. Use opaque or heavily blurred backgrounds."
+  ]
+}
